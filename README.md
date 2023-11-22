@@ -9,3 +9,5 @@ In order to run this github repo in your android studio just create a file named
 with the following line:
 
 sdk.dir=/Users/YOURUSERNAME/Library/Android/sdk
+
+You will also need to set the run configurations to the defaults in the button next to the virtual device button 
