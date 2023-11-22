@@ -4,4 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.commsHub.CommsHubFragment"/>
+    tools:context=".ui.commsHub.CommsHubFragment">
+
+    <Button
+        android:id="@+id/newsUpdatesButton"
+        android:layout_width="284dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_newspaper_24"
+        android:text="News Updates"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/messagesButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/messagesButton"
+        app:layout_constraintTop_toBottomOf="@+id/messagesButton" />
+
+    <Button
+        android:id="@+id/messagesButton"
+        android:layout_width="284dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_message_24"
+        android:text="Messages"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
