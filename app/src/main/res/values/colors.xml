@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-</resources>
+    <color name="colorPrimary">#FFFF8C00</color> <!-- Dark Orange for primary color -->
+    <color name="colorPrimaryDark">#FFFF4500</color> <!-- Orange Red for primary dark color -->
+    <color name="colorAccent">#FFFFD700</color> <!-- Gold for accent color -->
+    </resources>
