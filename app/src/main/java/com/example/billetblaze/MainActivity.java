@@ -33,6 +33,23 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        // Have to Override otherwise can't go home as per MaterialDesign guidelines
+        navView.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.navigation_home) {
+                navController.navigate(R.id.navigation_home);
+                return true;
+            } else if (item.getItemId() == R.id.navigation_search) {
+                navController.navigate(R.id.navigation_search);
+                return true;
+            } else if (item.getItemId() == R.id.navigation_commsHub) {
+                navController.navigate(R.id.navigation_commsHub);
+                return true;
+            }
+            return false;
+        });
+
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
