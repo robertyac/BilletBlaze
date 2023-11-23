@@ -5,6 +5,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,6 +17,8 @@ import com.example.billetblaze.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+
+    public ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        actionBar = getSupportActionBar();
+        // Check if the ActionBar is not null
+        if (actionBar != null) {
+            // Set the logo
+            actionBar.setLogo(R.drawable.fire);
+
+            // Display the logo
+            actionBar.setDisplayUseLogoEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -9,109 +9,54 @@
 
     <TextView
         android:id="@+id/userNameTv"
-        android:layout_width="197dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="167dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/baseline_person_24"
         android:text="John Doe"
-        android:textSize="34sp"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/hostButton"
-        android:layout_width="168dp"
-        android:layout_height="94dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/round_button"
-        android:drawableTop="@drawable/addbillet"
-        android:text="Host a Billet"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
-        app:layout_constraintStart_toEndOf="@+id/searchButton"
-        app:layout_constraintTop_toBottomOf="@+id/userTypeTv" />
-
-    <TextView
-        android:id="@+id/nearbyUpdates"
-        android:layout_width="152dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="48dp"
-        android:text="Nearby Updates"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/userLocationTv"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manageButton" />
-
-    <Button
-        android:id="@+id/manageButton"
-        android:layout_width="354dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round_button"
-        android:drawableTop="@drawable/managebookingslogo"
-        android:text="Manage Bookings"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/hostButton"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="@+id/searchButton"
-        app:layout_constraintTop_toBottomOf="@+id/searchButton" />
-
-    <TextView
-        android:id="@+id/userLocationTv"
-        android:layout_width="152dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:drawableLeft="@drawable/baseline_person_pin_circle_24"
-        android:text="Location"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manageButton" />
-
-    <Button
-        android:id="@+id/commsButton"
-        android:layout_width="168dp"
-        android:layout_height="94dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_button"
-        android:drawableTop="@drawable/baseline_people_alt_24"
-        android:text="Communication Hub"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toEndOf="@+id/mapsButton"
-        app:layout_constraintTop_toBottomOf="@+id/userLocationTv" />
-
-    <Button
-        android:id="@+id/mapsButton"
-        android:layout_width="168dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_button"
-        android:drawableTop="@drawable/baseline_map_24"
-        android:text="Maps"
-        android:textAllCaps="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nearbyUpdates" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="168dp"
         android:layout_height="94dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/search"
         android:text="Search"
         android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userTypeTv" />
+
+    <Button
+        android:id="@+id/manageButton"
+        android:layout_width="354dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/managebookingslogo"
+        android:text="Manage Bookings"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/hostButton"
+        app:layout_constraintStart_toStartOf="@+id/searchButton"
+        app:layout_constraintTop_toBottomOf="@+id/searchButton" />
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="View Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toEndOf="@+id/userNameTv"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/userTypeTv"
@@ -126,14 +71,86 @@
         app:layout_constraintTop_toBottomOf="@+id/userNameTv" />
 
     <Button
-        android:id="@+id/profileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:text="View Profile"
+        android:id="@+id/hostButton"
+        android:layout_width="168dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/addbillet"
+        android:text="Host a Billet"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/userNameTv"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toEndOf="@+id/searchButton"
+        app:layout_constraintTop_toBottomOf="@+id/userTypeTv" />
+
+    <Button
+        android:id="@+id/commsButton"
+        android:layout_width="168dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_people_alt_24"
+        android:text="Communication Hub"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/manageButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/mapsButton"
+        app:layout_constraintTop_toBottomOf="@+id/userLocationTv" />
+
+    <TextView
+        android:id="@+id/userLocationTv"
+        android:layout_width="152dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:drawableLeft="@drawable/baseline_person_pin_circle_24"
+        android:text="Location"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageButton" />
+
+    <TextView
+        android:id="@+id/nearbyUpdates"
+        android:layout_width="152dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:text="Nearby Updates"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/userLocationTv"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageButton" />
+
+    <Button
+        android:id="@+id/mapsButton"
+        android:layout_width="168dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_map_24"
+        android:text="Maps"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/manageButton"
+        app:layout_constraintTop_toBottomOf="@+id/nearbyUpdates" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="223dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/bigfire"
+        android:text="BilletBlaze"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

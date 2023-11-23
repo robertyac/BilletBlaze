@@ -8,30 +8,41 @@
 
     <Button
         android:id="@+id/newsUpdatesButton"
-        android:layout_width="284dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="165dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="84dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_newspaper_24"
         android:text="News Updates"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/messagesButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/messagesButton"
-        app:layout_constraintTop_toBottomOf="@+id/messagesButton" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/messagesButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/messagesButton"
-        android:layout_width="284dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="165dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_message_24"
         android:text="Messages"
         android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/newsUpdatesButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="268dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="136dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/bigfire" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

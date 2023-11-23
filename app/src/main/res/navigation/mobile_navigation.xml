@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/navigation_findBillet"
         android:name="com.example.billetblaze.ui.search.FindBilletFragment"
-        android:label="Find Billet"
+        android:label="Find a Billet"
         tools:layout="@layout/fragment_find_billet" />
 
 </navigation>
