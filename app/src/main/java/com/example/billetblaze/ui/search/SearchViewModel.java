@@ -1,4 +1,4 @@
-package com.example.billetblaze.ui.dashboard;
+package com.example.billetblaze.ui.search;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
