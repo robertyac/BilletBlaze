@@ -17,7 +17,6 @@ import com.example.billetblaze.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
     public ActionBar actionBar;
 
     @Override
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
-
 
         actionBar = getSupportActionBar();
         // Check if the ActionBar is not null
