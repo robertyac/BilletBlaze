@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.search.FindBilletFragment"/>
+    tools:context=".ui.search.FindBilletFragment">
+
+    <Button
+        android:id="@+id/destinationButton"
+        android:layout_width="209dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/round_button"
+        android:drawableLeft="@drawable/baseline_pin_drop_24"
+        android:text="Destination"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/guestsButton"
+        android:layout_width="209dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/round_button"
+        android:drawableLeft="@drawable/baseline_people_alt_24"
+        android:text="Guests"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
+        app:layout_constraintEnd_toEndOf="@+id/datesButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/datesButton"
+        app:layout_constraintTop_toBottomOf="@+id/datesButton" />
+
+    <TextView
+        android:id="@+id/datesTv"
+        android:layout_width="204dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/datesButton"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/datesButton"
+        app:layout_constraintTop_toBottomOf="@+id/datesButton" />
+
+    <TextView
+        android:id="@+id/guestsTv"
+        android:layout_width="197dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/guestsButton"
+        app:layout_constraintStart_toStartOf="@+id/guestsButton"
+        app:layout_constraintTop_toBottomOf="@+id/guestsButton" />
+
+    <Button
+        android:id="@+id/datesButton"
+        android:layout_width="209dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/round_button"
+        android:drawableLeft="@drawable/baseline_calendar_today_24"
+        android:text="Dates"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
+        app:layout_constraintEnd_toEndOf="@+id/destinationButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/destinationButton"
+        app:layout_constraintTop_toBottomOf="@+id/destinationButton" />
+
+    <TextView
+        android:id="@+id/destinationTv"
+        android:layout_width="202dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/datesButton"
+        app:layout_constraintEnd_toEndOf="@+id/destinationButton"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/destinationButton"
+        app:layout_constraintTop_toBottomOf="@+id/destinationButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/findBilletsButton"
+        android:layout_width="239dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="76dp"
+        android:text="Find Available Billets"
+        app:layout_constraintEnd_toEndOf="@+id/guestsButton"
+        app:layout_constraintStart_toStartOf="@+id/guestsButton"
+        app:layout_constraintTop_toBottomOf="@+id/guestsButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
