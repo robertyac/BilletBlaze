@@ -38,6 +38,16 @@
         android:id="@+id/navigation_findBillet"
         android:name="com.example.billetblaze.ui.search.FindBilletFragment"
         android:label="Find a Billet"
-        tools:layout="@layout/fragment_find_billet" />
+        tools:layout="@layout/fragment_find_billet" >
+        <action
+            android:id="@+id/action_navigation_findBillet_to_navigation_searchResults"
+            app:destination="@id/navigation_searchResults" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_searchResults"
+        android:name="com.example.billetblaze.ui.search.SearchResultsFragment"
+        android:label="Available Billets"
+        tools:layout="@layout/fragment_search_results" />
 
 </navigation>
