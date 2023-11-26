@@ -208,9 +208,13 @@ public class FindBilletFragment extends Fragment {
                         && !guestsTv.getText().toString().isEmpty()) {
 
                     //TODO: need to pass: [dateRange city numGuestsInt] to the next fragment
+                    Bundle args = new Bundle();
+                    args.putString("dateRange", dateRange);
+                    args.putString("city", city);
+                    args.putInt("numGuests",numGuestsInt);
 
                     // All fields have been completed, navigate to the next fragment
-                    Navigation.findNavController(v).navigate(R.id.action_navigation_findBillet_to_navigation_searchResults);
+                    Navigation.findNavController(v).navigate(R.id.action_navigation_findBillet_to_navigation_searchResults, args);
                 }
 
 

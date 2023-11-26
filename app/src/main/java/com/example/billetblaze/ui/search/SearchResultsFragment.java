@@ -1,51 +1,30 @@
 package com.example.billetblaze.ui.search;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import androidx.core.util.Pair;
-
-import com.example.billetblaze.MapsActivity;
 import com.example.billetblaze.R;
-import com.google.android.material.datepicker.CalendarConstraints;
-import com.google.android.material.datepicker.DateValidatorPointForward;
-import com.google.android.material.datepicker.MaterialDatePicker;
-import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class SearchResultsFragment extends Fragment {
 
+    private String dateRange, city;
+    private int numGuests;
+    private TextView dateRangeTv, cityTv, numGuestsTv;
+
+    private CardView billetCard;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -53,12 +32,39 @@ public class SearchResultsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_search_results, container, false);
+        Bundle args = getArguments();
+
+        dateRange = args.getString("dateRange");
+        city = args.getString("city");
+        numGuests = args.getInt("numGuests");
+
+        dateRangeTv = view.findViewById(R.id.dateRangeTv);
+        numGuestsTv = view.findViewById(R.id.numGuestsTv);
+        cityTv = view.findViewById(R.id.cityTv);
+
+        dateRangeTv.setText("Dates: " + dateRange);
+        numGuestsTv.setText(String.valueOf(numGuests) + " Guests");
+        cityTv.setText(city);
 
         // back button back to search
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        billetCard = view.findViewById(R.id.billet_card);
+        billetCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("dateRange", dateRange);
+                args.putString("city", city);
+                args.putInt("numGuests",numGuests);
+                //click event
+                Navigation.findNavController(v).navigate(R.id.action_navigation_searchResults_to_navigation_BilletDetail,args);
+            }
+        });
+
+
+
         return view;
     }
-
 }
