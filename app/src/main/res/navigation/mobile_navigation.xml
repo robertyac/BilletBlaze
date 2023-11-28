@@ -76,7 +76,7 @@
     <fragment
         android:id="@+id/personalInfoFragment"
         android:name="com.example.billetblaze.ui.search.PersonalInfoFragment"
-        android:label="Personal Informatino"
+        android:label="Personal Information"
         tools:layout="@layout/fragment_personal_info" />
 
     <fragment
