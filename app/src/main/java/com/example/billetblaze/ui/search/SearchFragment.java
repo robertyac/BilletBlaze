@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ public class SearchFragment extends Fragment {
 
     private FragmentSearchBinding binding;
     private Button findBilletButton, nearbyHelpButton;
+    private ImageView fireImage;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         SearchViewModel searchViewModel =
@@ -30,6 +32,8 @@ public class SearchFragment extends Fragment {
         findBilletButton = root.findViewById(R.id.findBilletButton);
         nearbyHelpButton = root.findViewById(R.id.nearbyHelpButton);
 
+        fireImage = root.findViewById(R.id.imageViewFireSearch);
+        fireImage.setImageResource(R.drawable.bigfire);
         findBilletButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
