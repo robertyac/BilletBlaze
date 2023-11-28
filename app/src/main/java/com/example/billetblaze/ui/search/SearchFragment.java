@@ -17,7 +17,7 @@ import com.example.billetblaze.databinding.FragmentSearchBinding;
 public class SearchFragment extends Fragment {
 
     private FragmentSearchBinding binding;
-    private Button findBilletButton;
+    private Button findBilletButton, nearbyHelpButton;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         SearchViewModel searchViewModel =
@@ -28,13 +28,21 @@ public class SearchFragment extends Fragment {
 
 
         findBilletButton = root.findViewById(R.id.findBilletButton);
+        nearbyHelpButton = root.findViewById(R.id.nearbyHelpButton);
 
-        // Set a click listener on the button
         findBilletButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Use the NavController to navigate to the FindBilletFragment
                 Navigation.findNavController(v).navigate(R.id.action_navigation_search_to_navigation_findBillet);
+            }
+        });
+
+        nearbyHelpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Use the NavController to navigate to the NewsFragment
+                Navigation.findNavController(v).navigate(R.id.action_navigation_search_to_navigation_News);
             }
         });
 

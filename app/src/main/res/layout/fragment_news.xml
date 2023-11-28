@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.commsHub.NewsFragment" >
+
+    <TextView
+        android:id="@+id/newsHeaderTv"
+        android:layout_width="306dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="60dp"
+        android:text="Local News for Kelowna"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/localNewsButton"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_newspaper_24"
+        android:text="Local Emergency News"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/newsHeaderTv"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/newsHeaderTv"
+        app:layout_constraintTop_toBottomOf="@+id/newsHeaderTv" />
+
+    <Button
+        android:id="@+id/provincialButton"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_newspaper_24"
+        android:text="Provincial Wildfire News"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/localNewsButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/localNewsButton"
+        app:layout_constraintTop_toBottomOf="@+id/localNewsButton" />
+
+    <Button
+        android:id="@+id/externalMapButton"
+        android:layout_width="325dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/round_button"
+        android:drawableTop="@drawable/baseline_map_24"
+        android:text="Local Wildfire Map"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/provincialButton"
+        app:layout_constraintStart_toStartOf="@+id/provincialButton"
+        app:layout_constraintTop_toBottomOf="@+id/provincialButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

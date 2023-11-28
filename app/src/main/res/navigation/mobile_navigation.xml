@@ -26,13 +26,23 @@
         <action
             android:id="@+id/action_navigation_search_to_navigation_findBillet"
             app:destination="@id/navigation_findBillet" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_News"
+            app:destination="@id/navigation_News" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_commsHub"
         android:name="com.example.billetblaze.ui.commsHub.CommsHubFragment"
         android:label="@string/title_commsHub"
-        tools:layout="@layout/fragment_commshub" />
+        tools:layout="@layout/fragment_commshub" >
+        <action
+            android:id="@+id/action_navigation_commsHub_to_navigation_News"
+            app:destination="@id/navigation_News" />
+        <action
+            android:id="@+id/action_navigation_commsHub_to_navigation_Messages"
+            app:destination="@id/navigation_Messages" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_findBillet"
@@ -59,5 +69,18 @@
         android:name="com.example.billetblaze.ui.search.BilletDetailFragment"
         android:label="Billet Details"
         tools:layout="@layout/fragment_billet_detail" />
+
+    <fragment
+        android:id="@+id/navigation_News"
+        android:name="com.example.billetblaze.ui.commsHub.NewsFragment"
+        android:label="Wildfire News"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/navigation_Messages"
+        android:name="com.example.billetblaze.ui.commsHub.MessagesFragment"
+        android:label="Messages"
+        tools:layout="@layout/fragment_messages" />
+
 
 </navigation>
