@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -29,6 +31,8 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        View webViewLayout = inflater.inflate(R.layout.webview, container, false);
 
         // Initialize your buttons and TextView
         hostButton = root.findViewById(R.id.hostButton);
@@ -66,8 +70,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // TODO: Define what happens when mapsButton is clicked
+                WebView webView = (WebView) webViewLayout.findViewById(R.id.webview);
+                webView.setWebViewClient(new WebViewClient());
+                webView.loadUrl("https://www.cordemergency.ca/map");
+
+                // Replace the current layout with the WebView layout
+                ((ViewGroup) root).removeAllViews();
+                ((ViewGroup) root).addView(webViewLayout);
             }
         });
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
