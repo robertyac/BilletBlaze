@@ -10,7 +10,6 @@
         android:id="@+id/findBilletButton"
         android:layout_width="165dp"
         android:layout_height="140dp"
-        android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/search"
@@ -18,15 +17,15 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toEndOf="@+id/nearbyHelpButton" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/nearbyHelpButton"
         android:layout_width="165dp"
         android:layout_height="140dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="84dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_help_center_24"
@@ -34,10 +33,12 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/findBilletButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewFireSearch" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewFireSearch"
         android:layout_width="268dp"
         android:layout_height="260dp"
         android:layout_marginTop="136dp"
