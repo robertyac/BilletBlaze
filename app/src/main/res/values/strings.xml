@@ -11,7 +11,6 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="are_you_currently_under_evacuation_order">Are you currently under evacuation order?</string>
     <string name="do_you_require_any_additional_assitance">Do you require any additional assistance?</string>
-    <string name="gender">Gender:</string>
     <string name="female">Female</string>
     <string name="city">City:</string>
     <string name="male">Male</string>
@@ -26,4 +25,5 @@
     <string name="enter_your_first_last_name">Enter your First/Last name</string>
     <string name="_1_000_000_000">+1 000–000–000</string>
     <string name="phone_number">Phone Number:</string>
+    <string name="gender">Gender:</string>
 </resources>
