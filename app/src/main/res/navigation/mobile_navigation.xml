@@ -68,7 +68,16 @@
         android:id="@+id/navigation_BilletDetail"
         android:name="com.example.billetblaze.ui.search.BilletDetailFragment"
         android:label="Billet Details"
-        tools:layout="@layout/fragment_billet_detail" />
+        tools:layout="@layout/fragment_billet_detail" >
+        <action
+            android:id="@+id/action_navigation_BilletDetail_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.example.billetblaze.ui.search.PersonalInfoFragment"
+        android:label="Personal Informatino"
+        tools:layout="@layout/fragment_personal_info" />
 
     <fragment
         android:id="@+id/navigation_News"
