@@ -50,6 +50,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        LatLng kelowna = new LatLng(49.8801, -119.4436);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kelowna, 8));
+
         Toast.makeText(this, "Long click on the map to pick a city", Toast.LENGTH_LONG).show();
         // Enable the My Location layer
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
