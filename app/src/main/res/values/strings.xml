@@ -19,7 +19,7 @@
     <string name="address">Address:</string>
     <string name="enter_your_age">Enter your Age</string>
     <string name="age">Age:</string>
-    <string name="check_in">CHECK IN</string>
+    <string name="payment">SELECT PAYMENT</string>
     <string name="enter_city">Enter City</string>
     <string name="name">Name:</string>
     <string name="enter_your_first_last_name">Enter your First/Last name</string>
