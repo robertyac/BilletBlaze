@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,8 +18,8 @@ import com.example.billetblaze.databinding.FragmentCommshubBinding;
 public class CommsHubFragment extends Fragment {
 
     private FragmentCommshubBinding binding;
-
     private Button newsButton, messagesButton;
+    private ImageView fireImage;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,10 +29,11 @@ public class CommsHubFragment extends Fragment {
         binding = FragmentCommshubBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
         newsButton = root.findViewById(R.id.newsUpdatesButton);
         messagesButton = root.findViewById(R.id.messagesButton);
 
+        fireImage = root.findViewById(R.id.imageViewFireComms);
+        fireImage.setImageResource(R.drawable.bigfire);
         newsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

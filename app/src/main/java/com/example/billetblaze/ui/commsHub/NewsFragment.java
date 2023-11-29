@@ -1,5 +1,7 @@
 package com.example.billetblaze.ui.commsHub;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -66,13 +68,10 @@ public class NewsFragment extends Fragment {
         externalMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WebView webView = (WebView) webViewLayout.findViewById(R.id.webview);
-                webView.setWebViewClient(new WebViewClient());
-                webView.loadUrl("https://www.cordemergency.ca/map");
-
-                // Replace the current layout with the WebView layout
-                ((ViewGroup) view).removeAllViews();
-                ((ViewGroup) view).addView(webViewLayout);
+                String url = "https://www.cordemergency.ca/map";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
 

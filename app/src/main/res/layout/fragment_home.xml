@@ -90,7 +90,7 @@
         android:id="@+id/commsButton"
         android:layout_width="170dp"
         android:layout_height="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_people_alt_24"
         android:text="Communication Hub"
@@ -101,25 +101,12 @@
         app:layout_constraintStart_toEndOf="@+id/mapsButton"
         app:layout_constraintTop_toBottomOf="@+id/userLocationTv" />
 
-    <TextView
-        android:id="@+id/userLocationTv"
-        android:layout_width="152dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="28dp"
-        android:drawableLeft="@drawable/baseline_person_pin_circle_24"
-        android:text="Kelowna"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manageButton" />
-
     <Button
         android:id="@+id/mapsButton"
         android:layout_width="170dp"
         android:layout_height="100dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_map_24"
         android:text="Local Wildfire Map"
@@ -132,12 +119,25 @@
         android:id="@+id/nearbyUpdates"
         android:layout_width="152dp"
         android:layout_height="29dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:text="Nearby Updates"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/userLocationTv"
-        app:layout_constraintHorizontal_bias="0.329"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manageButton" />
+
+    <TextView
+        android:id="@+id/userLocationTv"
+        android:layout_width="152dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="48dp"
+        android:drawableLeft="@drawable/baseline_person_pin_circle_24"
+        android:text="Kelowna"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manageButton" />
 
     <TextView
