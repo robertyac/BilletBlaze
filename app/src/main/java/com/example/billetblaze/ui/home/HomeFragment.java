@@ -16,15 +16,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.example.billetblaze.Billet;
 import com.example.billetblaze.R;
 import com.example.billetblaze.databinding.FragmentHomeBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private Button hostButton, manageButton, commsButton, mapsButton, searchButton, viewProfileButton;
     private TextView userLocationTv;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,6 +59,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // TODO: Define what happens when manageButton is clicked
+
+                Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_manageFragment);
             }
         });
 
