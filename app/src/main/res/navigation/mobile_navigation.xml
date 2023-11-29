@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_navigation_home_to_manageFragment"
             app:destination="@id/manageFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_host"
+            app:destination="@id/navigation_host" />
     </fragment>
 
     <fragment
@@ -96,8 +99,14 @@
     <fragment
         android:id="@+id/manageFragment"
         android:name="com.example.billetblaze.ui.manage.ManageFragment"
-        android:label="fragment_manage"
+        android:label="Manage Bookings"
         tools:layout="@layout/fragment_manage" />
+
+    <fragment
+        android:id="@+id/navigation_host"
+        android:name="com.example.billetblaze.ui.host.HostFragment"
+        android:label="Host Billets"
+        tools:layout="@layout/fragment_host" />
 
 
 </navigation>
