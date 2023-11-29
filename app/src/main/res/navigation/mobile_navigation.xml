@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_commsHub"
             app:destination="@id/navigation_commsHub" />
+        <action
+            android:id="@+id/action_navigation_home_to_manageFragment"
+            app:destination="@id/manageFragment" />
     </fragment>
 
     <fragment
@@ -81,6 +84,11 @@
         android:name="com.example.billetblaze.ui.commsHub.MessagesFragment"
         android:label="Messages"
         tools:layout="@layout/fragment_messages" />
+    <fragment
+        android:id="@+id/manageFragment"
+        android:name="com.example.billetblaze.ui.manage.ManageFragment"
+        android:label="fragment_manage"
+        tools:layout="@layout/fragment_manage" />
 
 
 </navigation>

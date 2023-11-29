@@ -9,4 +9,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
 
+    <string-array name="bookings_spinner">
+        <item>active</item>
+        <item>inactive</item>
+        <item>bookings</item>
+    </string-array>
+
+
 </resources>
