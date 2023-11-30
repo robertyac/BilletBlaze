@@ -78,17 +78,14 @@ public class PersonalInfoFragment extends Fragment {
                 Toast.makeText(getContext(), "Please enter a valid  age", Toast.LENGTH_SHORT).show();
             } else if (address.trim().isEmpty()) {
                 Toast.makeText(getContext(), "Please enter a valid address", Toast.LENGTH_SHORT).show();
-            } else if (phone.trim().isEmpty() && phone.length() > 9) {
+            } else if (phone.trim().isEmpty() || phone.length() < 10) {
                 Toast.makeText(getContext(), "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
             } else if (genderId == -1) {
                 Toast.makeText(getContext(), "Please select a gender", Toast.LENGTH_SHORT).show();
             }
-        });
-        selectPayment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_personalInfoFragment_to_paymentFragment);
-            }
+
+            Navigation.findNavController(v).navigate(R.id.action_personalInfoFragment_to_paymentFragment);
+
         });
 
         return view;
