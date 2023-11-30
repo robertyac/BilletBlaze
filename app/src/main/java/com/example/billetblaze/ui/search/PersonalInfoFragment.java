@@ -82,10 +82,9 @@ public class PersonalInfoFragment extends Fragment {
                 Toast.makeText(getContext(), "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
             } else if (genderId == -1) {
                 Toast.makeText(getContext(), "Please select a gender", Toast.LENGTH_SHORT).show();
+            } else {
+                Navigation.findNavController(v).navigate(R.id.action_personalInfoFragment_to_paymentFragment);
             }
-
-            Navigation.findNavController(v).navigate(R.id.action_personalInfoFragment_to_paymentFragment);
-
         });
 
         return view;
