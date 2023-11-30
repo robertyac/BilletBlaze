@@ -27,6 +27,11 @@
     <string name="phone_number">Phone Number:</string>
     <string name="gender">Gender:</string>
 
+        <string-array name="cryptos">
+            <item>BTC</item>
+            <item>ETH</item>
+        </string-array>
+
     <string-array name="bookings_spinner">
         <item>active</item>
         <item>inactive</item>
