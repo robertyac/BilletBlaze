@@ -123,7 +123,7 @@
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.example.billetblaze.ui.search.ConfirmationFragment"
-        android:label="fragment_confirmation"
+        android:label="Confirmation Summary"
         tools:layout="@layout/fragment_confirmation" />
 
 

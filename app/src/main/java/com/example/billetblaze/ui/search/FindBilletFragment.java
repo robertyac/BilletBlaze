@@ -17,7 +17,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.core.util.Pair;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.billetblaze.MapsActivity;
@@ -36,14 +36,13 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
 public class FindBilletFragment extends Fragment {
-
-    private Button destinationButton,datesButton,guestsButton,findBilletsButton;
-    private TextView destinationTv,datesTv,guestsTv;
+    private BilletSharedData bsd;
+    private Button destinationButton, datesButton, guestsButton, findBilletsButton;
+    private TextView destinationTv, datesTv, guestsTv;
     private String startDate, endDate, dateRange, city;
     private int numGuestsInt;
 
@@ -51,6 +50,8 @@ public class FindBilletFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // New instance for storing the live data (Checkin/Checkout)
+        bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
     }
 
     @Override
@@ -78,6 +79,7 @@ public class FindBilletFragment extends Fragment {
 
         return view;
     }
+
     private void getUserDestination() {
         ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -102,6 +104,7 @@ public class FindBilletFragment extends Fragment {
             }
         });
     }
+
     private void getDateRange() {
         //MaterialDatePicker android devs
         datesButton.setOnClickListener(new View.OnClickListener() {
@@ -142,11 +145,13 @@ public class FindBilletFragment extends Fragment {
 
                         dateRange = startDate + " to " + endDate;
                         datesTv.setText(dateRange);
+
                     }
                 });
             }
         });
     }
+
     private void getGuests() {
         guestsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,29 +194,34 @@ public class FindBilletFragment extends Fragment {
             }
         });
     }
+
     private void validateAndFindAvailableBillets() {
         findBilletsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (destinationTv.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(),"Please select a destination.",Toast.LENGTH_SHORT).show();
+                if (destinationTv.getText().toString().isEmpty()) {
+                    Toast.makeText(getActivity(), "Please select a destination.", Toast.LENGTH_SHORT).show();
                 }
-                if (datesTv.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(),"Please select dates.",Toast.LENGTH_SHORT).show();
+                if (datesTv.getText().toString().isEmpty()) {
+                    Toast.makeText(getActivity(), "Please select dates.", Toast.LENGTH_SHORT).show();
                 }
-                if (guestsTv.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(),"Please select the number of guests.",Toast.LENGTH_SHORT).show();
+                if (guestsTv.getText().toString().isEmpty()) {
+                    Toast.makeText(getActivity(), "Please select the number of guests.", Toast.LENGTH_SHORT).show();
                 }
 
                 if (!destinationTv.getText().toString().isEmpty()
                         && !datesTv.getText().toString().isEmpty()
                         && !guestsTv.getText().toString().isEmpty()) {
 
+                    // Setting the checkin/checkout values so we can reference inside of the confirmation page.
+                    bsd.setStartDate(startDate);
+                    bsd.setEndDate(endDate);
+
                     //TODO: need to pass: [dateRange city numGuestsInt] to the next fragment
                     Bundle args = new Bundle();
                     args.putString("dateRange", dateRange);
                     args.putString("city", city);
-                    args.putInt("numGuests",numGuestsInt);
+                    args.putInt("numGuests", numGuestsInt);
 
                     // All fields have been completed, navigate to the next fragment
                     Navigation.findNavController(v).navigate(R.id.action_navigation_findBillet_to_navigation_searchResults, args);

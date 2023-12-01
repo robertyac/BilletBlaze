@@ -44,6 +44,8 @@
     <string name="pay_with_paypal">Pay with PayPal:</string>
     <string name="security_code">Security Code</string>
     <string name="card_number_must_be_16_digits">Card number must be 16 digits</string>
+    <string name="check_in_date">CHECK-IN DATE:</string>
+    <string name="check_out_date">CHECK-OUT DATE:</string>
 
     <string-array name="cryptos">
         <item>BTC</item>
