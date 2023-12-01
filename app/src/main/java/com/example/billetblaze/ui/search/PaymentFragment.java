@@ -51,7 +51,7 @@ public class PaymentFragment extends Fragment {
         // Setup for PayPal API
         config = new PayPalConfiguration()
                 .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
-                .clientId("AUer8EUljB9yzFXqFcwjO2Ghll3U6yQsQUtmIMdtpgs_EqhYY7ZgWPEXDLFzDv-nWFnKKPU-YcH4Wv61");
+                .clientId("API KEY HERE");
 
         Button payPalButton = view.findViewById(R.id.payPalButton);
         payPalButton.setOnClickListener(v -> makePayPalPayment());
