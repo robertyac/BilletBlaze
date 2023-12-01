@@ -83,7 +83,11 @@
         android:id="@+id/personalInfoFragment"
         android:name="com.example.billetblaze.ui.search.PersonalInfoFragment"
         android:label="Personal Information"
-        tools:layout="@layout/fragment_personal_info" />
+        tools:layout="@layout/fragment_personal_info" >
+        <action
+            android:id="@+id/action_personalInfoFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_News"
@@ -107,6 +111,20 @@
         android:name="com.example.billetblaze.ui.host.HostFragment"
         android:label="Host Billets"
         tools:layout="@layout/fragment_host" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.billetblaze.ui.search.PaymentFragment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.billetblaze.ui.search.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" />
 
 
 </navigation>

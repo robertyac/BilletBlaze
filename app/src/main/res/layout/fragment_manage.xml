@@ -9,7 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/cryptoSpinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#457A7373"

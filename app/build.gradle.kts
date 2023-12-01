@@ -42,7 +42,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:2.7.5")
     implementation("com.google.android.gms:play-services-maps:18.1.0")
     implementation("com.google.android.gms:play-services-wallet:19.2.1")
-    implementation("com.paypal.sdk:paypal-android-sdk:2.16.0")
+    implementation ("com.paypal.sdk:paypal-android-sdk:2.16.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
 
