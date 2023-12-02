@@ -13,7 +13,7 @@ import com.example.billetblaze.R;
 
 public class ConfirmationFragment extends Fragment {
 
-    private TextView checkinTv, checkoutTv;
+    private TextView checkinTv, checkoutTv, priceCView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,12 +22,14 @@ public class ConfirmationFragment extends Fragment {
 
         checkinTv = view.findViewById(R.id.checkinTv);
         checkoutTv = view.findViewById(R.id.checkoutTv);
-
+        priceCView = view.findViewById(R.id.priceCView);
         BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
 
         bsd.getStartDate().observe(getViewLifecycleOwner(), startDate -> checkinTv.setText(startDate));
 
         bsd.getEndDate().observe(getViewLifecycleOwner(), endDate -> checkoutTv.setText(endDate));
+
+        bsd.getPriceString().observe(getViewLifecycleOwner(), priceString -> priceCView.setText(priceString));
 
         return view;
     }

@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 public class BilletSharedData extends AndroidViewModel {
     private final MutableLiveData<String> startDate = new MutableLiveData<>();
     private final MutableLiveData<String> endDate = new MutableLiveData<>();
-
+    private final MutableLiveData<String> priceString = new MutableLiveData<>();
 
     // Class for storing the live data that the user selects for date values. This way the user
     // does not have to re-enter the values on another page etc.
@@ -33,4 +33,10 @@ public class BilletSharedData extends AndroidViewModel {
     public void setEndDate(String endDate) {
         this.endDate.setValue(endDate);
     }
+
+    public LiveData<String> getPriceString() {return priceString;}
+
+    public void setPriceString(String priceString) {this.priceString.setValue(priceString);}
+
 }
+
