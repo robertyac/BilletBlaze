@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.Random;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.billetblaze.R;
@@ -24,6 +25,7 @@ public class BilletDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
         View view = inflater.inflate(R.layout.fragment_billet_detail, container, false);
 
         int price = priceGenerate(60, 200);
@@ -33,6 +35,7 @@ public class BilletDetailFragment extends Fragment {
         billetImage = view.findViewById(R.id.billetImage);
         ppnTv = view.findViewById(R.id.ppnView);
         priceView = view.findViewById(R.id.priceView);
+
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -49,6 +52,8 @@ public class BilletDetailFragment extends Fragment {
         billetTittleTv.setText("Cozy Billet in " + city);
 
         priceView.setText("$ " + String.valueOf(price));
+
+        bsd.setPriceString(String.valueOf(price));
 
         // On selecting bookButton, we are taken to the personalInformation section.
         bookButton.setOnClickListener(new View.OnClickListener() {
