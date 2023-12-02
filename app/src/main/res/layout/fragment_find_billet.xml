@@ -7,94 +7,109 @@
     tools:context=".ui.search.FindBilletFragment">
 
     <Button
+        android:id="@+id/findBilletsButton"
+        android:layout_width="239dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="36dp"
+        android:text="Find Available Billets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guestsButton" />
+
+    <Button
         android:id="@+id/destinationButton"
-        android:layout_width="209dp"
-        android:layout_height="79dp"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/round_button"
         android:drawableLeft="@drawable/baseline_pin_drop_24"
-        android:text="Destination"
+        android:text="Location"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/guestsButton"
-        android:layout_width="209dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/round_button"
         android:drawableLeft="@drawable/baseline_people_alt_24"
         android:text="Guests"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
-        app:layout_constraintEnd_toEndOf="@+id/datesButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/datesButton"
-        app:layout_constraintTop_toBottomOf="@+id/datesButton" />
-
-    <TextView
-        android:id="@+id/datesTv"
-        android:layout_width="204dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/datesButton"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/datesButton"
         app:layout_constraintTop_toBottomOf="@+id/datesButton" />
 
     <TextView
         android:id="@+id/guestsTv"
-        android:layout_width="197dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/tvborder"
+        android:gravity="center"
+        android:outlineProvider="none"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/guestsButton"
-        app:layout_constraintStart_toStartOf="@+id/guestsButton"
-        app:layout_constraintTop_toBottomOf="@+id/guestsButton" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/datesTv"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/guestsButton"
+        app:layout_constraintTop_toBottomOf="@+id/datesButton" />
+
+    <TextView
+        android:id="@+id/datesTv"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/tvborder"
+        android:gravity="center"
+        android:outlineProvider="none"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/destinationTv"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/datesButton"
+        app:layout_constraintTop_toBottomOf="@+id/destinationTv" />
 
     <Button
         android:id="@+id/datesButton"
-        android:layout_width="209dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/round_button"
         android:drawableLeft="@drawable/baseline_calendar_today_24"
         android:text="Dates"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/nearbyHelpButton"
-        app:layout_constraintEnd_toEndOf="@+id/destinationButton"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/destinationButton"
         app:layout_constraintTop_toBottomOf="@+id/destinationButton" />
 
     <TextView
         android:id="@+id/destinationTv"
-        android:layout_width="202dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/tvborder"
+        android:gravity="center"
+        android:outlineProvider="none"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/datesButton"
-        app:layout_constraintEnd_toEndOf="@+id/destinationButton"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/destinationButton"
-        app:layout_constraintTop_toBottomOf="@+id/destinationButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/findBilletsButton"
-        android:layout_width="239dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="76dp"
-        android:text="Find Available Billets"
-        app:layout_constraintEnd_toEndOf="@+id/guestsButton"
-        app:layout_constraintStart_toStartOf="@+id/guestsButton"
-        app:layout_constraintTop_toBottomOf="@+id/guestsButton" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/destinationButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

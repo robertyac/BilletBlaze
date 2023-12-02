@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In-Home Services"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome0"
+            android:text="Individual Showers" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome1"
+            android:text="Washing Machine" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome2"
+            android:text="Drying Machine" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome3"
+            android:text="Kitchen" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome4"
+            android:text="First Aid Supplies" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome5"
+            android:text="Child-Friendly" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome6"
+            android:text="Pet-Friendly" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome7"
+            android:text="Meals are Provided" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome8"
+            android:text="Cellular Access" />
+
+        <CheckBox
+            android:id="@+id/inHomeCheckbox10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="inHome9"
+            android:text="Internet Access" />
+
+        <!-- Checkboxes for in-home services go here -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nearby (5km or Less)"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby0"
+            android:text="Emergency Medical Services" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby1"
+            android:text="Mental Health Support Services" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby2"
+            android:text="Child Care Services" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby3"
+            android:text="Communal Washroom" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby4"
+            android:text="Gas Station" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby5"
+            android:text="Grocery Store" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby6"
+            android:text="Pharmacy" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby7"
+            android:text="Free Parking Lot" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby8"
+            android:text="Public Transportation Route" />
+
+        <CheckBox
+            android:id="@+id/nearbyCheckbox10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="nearby9"
+            android:text="Information/Resource Center" />
+
+    </LinearLayout>
+</LinearLayout>
+

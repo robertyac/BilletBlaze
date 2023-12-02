@@ -27,6 +27,7 @@ import androidx.core.util.Pair;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import com.example.billetblaze.BilletDetail;
 import com.example.billetblaze.MapsActivity;
 import com.example.billetblaze.R;
 import com.google.android.material.datepicker.CalendarConstraints;
@@ -34,18 +35,27 @@ import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
+import java.util.Scanner;
 import java.util.TimeZone;
 
 public class FindBilletFragment extends Fragment {
     private BilletSharedData bsd;
+    private BilletDetailAdapter billetDetailAdapter;
+    private List<BilletDetail> billetDetailList = new ArrayList<>();
     private Button destinationButton, datesButton, guestsButton, findBilletsButton;
     private TextView destinationTv, datesTv, guestsTv;
     private String startDate, endDate, dateRange, city;
     private int numGuestsInt;
 
+    private Scanner scanner;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -217,18 +227,66 @@ public class FindBilletFragment extends Fragment {
                     bsd.setStartDate(startDate);
                     bsd.setEndDate(endDate);
 
-                    //TODO: need to pass: [dateRange city numGuestsInt] to the next fragment
-                    Bundle args = new Bundle();
-                    args.putString("dateRange", dateRange);
-                    args.putString("city", city);
-                    args.putInt("numGuests", numGuestsInt);
+                    File file = new File(getActivity().getFilesDir(), "hostedBillets.txt");
+                    if (!file.exists()) {
+                        Toast.makeText(getContext(), "No available billets found. No Records.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Read the data from your text file into billetDetailList
+                        billetDetailList = new ArrayList<>();
+                        try {
+                            scanner = new Scanner(file);
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                        while (scanner.hasNextLine()) {
+                            String line = scanner.nextLine();
+                            String[] parts = line.split(",", -1);
 
-                    // All fields have been completed, navigate to the next fragment
-                    Navigation.findNavController(v).navigate(R.id.action_navigation_findBillet_to_navigation_searchResults, args);
+                            String location = parts[0];
+                            String startDate = parts[1];
+                            String endDate = parts[2];
+                            int maxGuests = Integer.parseInt(parts[3]);
+
+// Extract the amenities list by finding the index of the first square bracket and the last square bracket
+                            int firstBracketIndex = line.indexOf("[");
+                            int lastBracketIndex = line.lastIndexOf("]");
+                            String amenitiesString = line.substring(firstBracketIndex + 1, lastBracketIndex);
+                            List<String> amenities = Arrays.asList(amenitiesString.split(", "));
+
+// Extract the price by getting the part of the line after the last square bracket
+                            String priceString = line.substring(lastBracketIndex + 2).trim(); // Skip the comma
+                            int price = Integer.parseInt(priceString);
+
+                            billetDetailList.add(new BilletDetail(location, startDate, endDate, maxGuests, amenities, price));
+                        }
+                        scanner.close();
+
+                        // Check if the user's location, and number of guests match any of the available billets
+                        boolean isBilletAvailable = false;
+                        for (BilletDetail billetDetail : billetDetailList) {
+                            if (city.equals(billetDetail.getLocation())
+                                    && numGuestsInt <= billetDetail.getMaxGuests()) {
+                                isBilletAvailable = true;
+                                break;
+                            }
+                        }
+
+                        if (!isBilletAvailable) {
+                            Toast.makeText(getContext(), "No available billets found.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // All fields have been completed, navigate to the next fragment
+                            Bundle args = new Bundle();
+                            args.putString("dateRange", dateRange);
+                            args.putString("city", city);
+                            args.putInt("numGuests", numGuestsInt);
+                            Navigation.findNavController(v).navigate(R.id.action_navigation_findBillet_to_navigation_searchResults, args);
+                        }
+                    }
                 }
-
-
             }
         });
     }
+
+
+
 }
