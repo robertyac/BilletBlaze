@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <ImageView
+        android:id="@+id/billetImageResults"
+        android:layout_width="122dp"
+        android:layout_height="81dp"
+        android:src="@drawable/house" />
+
+
+    <Button
+        android:id="@+id/deleteReviewButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/billetImageResults"
+        android:text="Delete Review"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/editReviewButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="116dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deleteReviewButton"
+        android:layout_alignParentRight="true"
+        android:text="EDIT REVIEW"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/reviewView"
+        android:layout_width="280dp"
+        android:layout_height="30dp"
+        android:paddingStart="8dp"
+        android:layout_below="@id/billetImageResults"/>
+
+
+    <TextView
+        android:id="@+id/billetNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/billetImageResults"
+        android:autoLink="web"
+        android:paddingStart="8dp"
+        android:text="Billet Name A" />
+
+    <TextView
+        android:id="@+id/billetAddressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/billetImageResults"
+        android:layout_below="@id/billetNameView"
+        android:paddingStart="8dp"
+        android:text="Billet Address A" />
+
+    <TextView
+        android:id="@+id/billetDateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/billetImageResults"
+        android:layout_below="@id/billetAddressView"
+        android:paddingStart="8dp"
+        android:text="Billet Date A" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/reviewView"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>
