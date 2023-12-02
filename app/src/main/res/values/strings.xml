@@ -46,6 +46,11 @@
     <string name="card_number_must_be_16_digits">Card number must be 16 digits</string>
     <string name="check_in_date">CHECK-IN DATE:</string>
     <string name="check_out_date">CHECK-OUT DATE:</string>
+    <string name="billet_description">Billet Description</string>
+    <string name="todo">TODO</string>
+    <string name="billet_tittle">Billet Tittle</string>
+    <string name="book_now">Book Now</string>
+    <string name="price_per_night">Price (Per Night):</string>
 
     <string-array name="cryptos">
         <item>BTC</item>
