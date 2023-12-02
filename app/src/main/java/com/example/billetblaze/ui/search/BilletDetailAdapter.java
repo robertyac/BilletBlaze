@@ -14,6 +14,7 @@ import com.example.billetblaze.BilletDetail;
 import com.example.billetblaze.R;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BilletDetailAdapter extends RecyclerView.Adapter<BilletDetailAdapter.BilletDetailViewHolder> {
@@ -35,12 +36,22 @@ public class BilletDetailAdapter extends RecyclerView.Adapter<BilletDetailAdapte
     @Override
     public void onBindViewHolder(@NonNull BilletDetailViewHolder holder, int position) {
         BilletDetail billetDetail = billetDetailList.get(position);
+        holder.title.setText("Billet Option " + (position + 1));
         holder.location.setText("Location: "+ billetDetail.getLocation());
         holder.startDate.setText("Start Date: "+billetDetail.getStartDate());
         holder.endDate.setText("End Date: "+ billetDetail.getEndDate());
         holder.maxGuests.setText("Max Guests: "+ String.valueOf(billetDetail.getMaxGuests()));
-        holder.amenities.setText("Ammeneties: "+ billetDetail.getAmenities().toString());
-        //holder.price.setText("Price: $"+ String.valueOf(billetDetail.getPrice()));
+        holder.price.setText("Price: $"+ String.valueOf(billetDetail.getPrice()));
+
+        // Format the amenities list to remove brackets and trailing comma
+        String amenitiesStr = billetDetail.getAmenities().toString();
+        amenitiesStr = amenitiesStr.substring(1, amenitiesStr.length() - 1); // Remove brackets
+        amenitiesStr = amenitiesStr.trim(); // Remove trailing spaces
+        if (amenitiesStr.endsWith(",")) {
+            amenitiesStr = amenitiesStr.substring(0, amenitiesStr.length() - 1); // Remove trailing comma
+        }
+        holder.amenities.setText("Ammeneties: " + amenitiesStr);
+
     }
 
     @Override
@@ -49,35 +60,33 @@ public class BilletDetailAdapter extends RecyclerView.Adapter<BilletDetailAdapte
     }
 
     public class BilletDetailViewHolder extends RecyclerView.ViewHolder {
-        TextView location, startDate,endDate, maxGuests, amenities, price;
+        TextView location, startDate,endDate, maxGuests, amenities, price,title;
 
         public BilletDetailViewHolder(View view) {
             super(view);
+            title = view.findViewById(R.id.title);
             location = view.findViewById(R.id.location);
             startDate = view.findViewById(R.id.start_date);
             endDate = view.findViewById(R.id.end_date);
             maxGuests = view.findViewById(R.id.max_guests);
             amenities = view.findViewById(R.id.amenities);
-            //price = view.findViewById(R.id.price);
-            
-            // Set an OnClickListener
+            price = view.findViewById(R.id.price);
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Get the position of the clicked item
                     int position = getAdapterPosition();
-
-                    // Check if the position is valid
                     if (position != RecyclerView.NO_POSITION) {
-                        // Get the clicked billet
                         BilletDetail clickedBillet = billetDetailList.get(position);
-
-                        // Create a bundle to pass the clicked billet to the detail section
                         Bundle bundle = new Bundle();
-                        bundle.putSerializable("clicked_billet",clickedBillet);
-
-                        // Use Navigation to navigate to the detail section
-                        Navigation.findNavController(v).navigate(R.id.action_navigation_searchResults_to_navigation_BilletDetail,bundle);
+                        bundle.putSerializable("clicked_billet", clickedBillet);
+                        bundle.putString("city", clickedBillet.getLocation());
+                        bundle.putString("startDate", clickedBillet.getStartDate());
+                        bundle.putString("endDate", clickedBillet.getEndDate());
+                        bundle.putInt("numGuests", clickedBillet.getMaxGuests());
+                        bundle.putDouble("price", clickedBillet.getPrice());
+                        bundle.putStringArrayList("amenities", new ArrayList<>(clickedBillet.getAmenities()));
+                        Navigation.findNavController(v).navigate(R.id.action_navigation_searchResults_to_navigation_BilletDetail, bundle);
                     }
                 }
             });

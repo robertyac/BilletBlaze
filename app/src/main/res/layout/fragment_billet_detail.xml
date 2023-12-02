@@ -15,10 +15,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"
+        app:layout_constraintVertical_bias="0.346"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -32,30 +32,28 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <TextView
         android:id="@+id/billeDescriptionTV"
-        android:layout_width="312dp"
-        android:layout_height="192dp"
+        android:layout_width="359dp"
+        android:layout_height="334dp"
         android:text="@string/billet_description"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.395"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.705" />
 
     <TextView
         android:id="@+id/billetTittleTv"
         android:layout_width="330dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="@string/billet_tittle"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -76,17 +74,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.864" />
+        app:layout_constraintVertical_bias="0.916" />
 
     <ImageView
         android:id="@+id/billetImage"
-        android:layout_width="406dp"
-        android:layout_height="228dp"
+        android:layout_width="409dp"
+        android:layout_height="178dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/house"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.086" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

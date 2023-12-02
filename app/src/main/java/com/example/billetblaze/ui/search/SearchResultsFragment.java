@@ -55,7 +55,7 @@ public class SearchResultsFragment extends Fragment {
         dateRangeTv = view.findViewById(R.id.dateRangeTv);
         numGuestsTv = view.findViewById(R.id.numGuestsTv);
         cityTv = view.findViewById(R.id.cityTv);
-
+        //user entered values during their search
         dateRangeTv.setText("Dates: " + dateRange);
         numGuestsTv.setText(String.valueOf(numGuests) + " Guests");
         cityTv.setText(city);
