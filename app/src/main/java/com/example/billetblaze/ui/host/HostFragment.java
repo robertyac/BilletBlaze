@@ -1,4 +1,4 @@
-package com.example.billetblaze.ui.commsHub;
+package com.example.billetblaze.ui.host;
 
 import android.os.Bundle;
 
@@ -10,8 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.billetblaze.R;
-
-public class MessagesFragment extends Fragment {
+public class HostFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,9 +21,8 @@ public class MessagesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_messages, container, false);
-
-        // back button
+        View view = inflater.inflate(R.layout.fragment_host, container, false);
+        //back button
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         return view;

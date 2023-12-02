@@ -19,13 +19,43 @@
     <string name="address">Address:</string>
     <string name="enter_your_age">Enter your Age</string>
     <string name="age">Age:</string>
-    <string name="check_in">CHECK IN</string>
+    <string name="payment">SELECT PAYMENT</string>
     <string name="enter_city">Enter City</string>
     <string name="name">Name:</string>
     <string name="enter_your_first_last_name">Enter your First/Last name</string>
     <string name="_1_000_000_000">+1 000–000–000</string>
     <string name="phone_number">Phone Number:</string>
     <string name="gender">Gender:</string>
+    <string name="cryptoAddress">Address</string>
+    <string name="_1234_5678_9012_3456">1234 5678 9012 3456</string>
+    <string name="mm_yy">MM/YY</string>
+    <string name="name_holder">Name Holder</string>
+    <string name="nameInput">Name</string>
+    <string name="coin">Coin</string>
+    <string name="confirm_payment">CONFIRM PAYMENT</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="_0xe6971a6561e4a1722d9294d02e94d1cca3390ab5">0xE6971A6561E4A1722D9294d02e94D1Cca3390AB5</string>
+    <string name="cryptocurrency_eth_btc">Cryptocurrency (ETH/BTC)</string>
+    <string name="cvv">CVV</string>
+    <string name="this_security_code_appears_as_3_numbers_on_the_back_of_card">This security code appears as 3 numbers on the back of card.</string>
+    <string name="expires_on">Expires On</string>
+    <string name="select_one_method_of_payment">Select one method of payment:</string>
+    <string name="paypal">PayPal</string>
+    <string name="pay_with_paypal">Pay with PayPal:</string>
+    <string name="security_code">Security Code</string>
+    <string name="card_number_must_be_16_digits">Card number must be 16 digits</string>
+    <string name="check_in_date">CHECK-IN DATE:</string>
+    <string name="check_out_date">CHECK-OUT DATE:</string>
+    <string name="billet_description">Billet Description</string>
+    <string name="todo">TODO</string>
+    <string name="billet_tittle">Billet Tittle</string>
+    <string name="book_now">Book Now</string>
+    <string name="price_per_night">Price (Per Night):</string>
+
+    <string-array name="cryptos">
+        <item>BTC</item>
+        <item>ETH</item>
+    </string-array>
 
     <string-array name="bookings_spinner">
         <item>active</item>

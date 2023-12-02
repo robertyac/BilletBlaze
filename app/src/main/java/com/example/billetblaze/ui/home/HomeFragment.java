@@ -45,14 +45,15 @@ public class HomeFragment extends Fragment {
         hostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Define what happens when hostButton is clicked
+                //Define what happens when hostButton is clicked
+                Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_navigation_host);
             }
         });
 
         manageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Define what happens when manageButton is clicked
+                //Define what happens when manageButton is clicked
 
                 Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_manageFragment);
             }
@@ -61,7 +62,7 @@ public class HomeFragment extends Fragment {
         commsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Define what happens when commsButton is clicked
+                //Define what happens when commsButton is clicked
                 Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_navigation_commsHub);
             }
         });
@@ -69,7 +70,7 @@ public class HomeFragment extends Fragment {
         mapsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Define what happens when mapsButton is clicked
+                //Define what happens when mapsButton is clicked
                 String url = "https://www.cordemergency.ca/map";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
@@ -80,7 +81,7 @@ public class HomeFragment extends Fragment {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Define what happens when searchButton is clicked
+                //Define what happens when searchButton is clicked
 
                 Navigation.findNavController(v).navigate(R.id.action_navigation_home_to_navigation_search);
             }
