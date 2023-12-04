@@ -97,14 +97,22 @@
 
     <fragment
         android:id="@+id/navigation_Messages"
-        android:name="com.example.billetblaze.ui.commsHub.MessagesFragment"
-        android:label="Messages"
-        tools:layout="@layout/fragment_messages" />
+        android:name="com.example.billetblaze.ui.commsHub.ContactFragment"
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_navigation_Messages_to_messagesList"
+            app:destination="@id/messagesList" />
+    </fragment>
     <fragment
         android:id="@+id/manageFragment"
         android:name="com.example.billetblaze.ui.manage.ManageFragment"
         android:label="Manage Bookings"
-        tools:layout="@layout/fragment_manage" />
+        tools:layout="@layout/fragment_manage" >
+        <action
+            android:id="@+id/action_manageFragment_to_writereview"
+            app:destination="@id/writereview" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_host"
@@ -125,6 +133,16 @@
         android:name="com.example.billetblaze.ui.search.ConfirmationFragment"
         android:label="Confirmation Summary"
         tools:layout="@layout/fragment_confirmation" />
+    <fragment
+        android:id="@+id/writereview"
+        android:name="com.example.billetblaze.ui.manage.writereview"
+        android:label="fragment_writereview"
+        tools:layout="@layout/fragment_writereview" />
+    <fragment
+        android:id="@+id/messagesList"
+        android:name="com.example.billetblaze.ui.commsHub.messageFragment"
+        android:label="messages"
+        tools:layout="@layout/fragment_messages" />
 
 
 </navigation>

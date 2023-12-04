@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.billetblaze.R;
@@ -23,4 +24,6 @@ public class MyViewHolderInactive extends RecyclerView.ViewHolder{
         dateView = itemView.findViewById(R.id.billetDateView);
         reviewButton = itemView.findViewById(R.id.reviewButton);
     }
+
+
 }
