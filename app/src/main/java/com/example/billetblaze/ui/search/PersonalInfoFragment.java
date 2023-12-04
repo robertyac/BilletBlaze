@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.billetblaze.R;
@@ -43,6 +44,7 @@ public class PersonalInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
+        BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
 
         assistanceCheck = view.findViewById(R.id.assistanceCheck);
         evacCheck = view.findViewById(R.id.evacCheck);
@@ -83,6 +85,7 @@ public class PersonalInfoFragment extends Fragment {
             } else if (genderId == -1) {
                 Toast.makeText(getContext(), "Please select a gender", Toast.LENGTH_SHORT).show();
             } else {
+                bsd.setGuestName(name);
                 Navigation.findNavController(v).navigate(R.id.action_personalInfoFragment_to_paymentFragment);
             }
         });

@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.billetblaze.R;
@@ -38,6 +39,7 @@ public class PaymentFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_payment, container, false);
+        BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
 
         cardNameInput = view.findViewById(R.id.cardNameInput);
         cardInput = view.findViewById(R.id.cardInput);
@@ -68,6 +70,7 @@ public class PaymentFragment extends Fragment {
         // SECTION: Credit Card Selected
         creditRadio.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
+                bsd.setPaymentUsed(creditRadio.getText().toString());
                 if (Objects.requireNonNull(cvvInput.getText()).length() != 3) {
                     cvvInput.setError("CVV must be 3 digits");
                 } else {
@@ -106,6 +109,7 @@ public class PaymentFragment extends Fragment {
         // SECTION: Crypto Selected
         cryptoRadio.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
+                bsd.setPaymentUsed(cryptoRadio.getText().toString());
                 cryptoInput.setError(null);
                 validateCryptoInput();
             } else {

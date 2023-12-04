@@ -180,6 +180,7 @@ public class FindBilletFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String numGuests = input.getText().toString();
+                        bsd.setNumGuests(numGuests);
                         if (!numGuests.isEmpty()) {
                             numGuestsInt = Integer.parseInt(numGuests);
                             if (numGuestsInt > 0) {
