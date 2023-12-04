@@ -51,6 +51,16 @@
     <string name="billet_tittle">Billet Tittle</string>
     <string name="book_now">Book Now</string>
     <string name="price_per_night">Price (Per Night):</string>
+    <string name="booking_id">Booking ID:</string>
+    <string name="check_in_date2">Check-In Date:</string>
+    <string name="check_out_date2">Check-Out Date:</string>
+    <string name="i_agree_to_the_terms_and_services_of_billetblaze">I agree to the Terms and Services of BilletBlaze</string>
+    <string name="todo2">TODO</string>
+    <string name="number_of_guests">Number of Guests:</string>
+    <string name="payment_method">Payment Method:</string>
+    <string name="price_per_night2">Price (Per Night):</string>
+    <string name="place_reservation">PLACE RESERVATION</string>
+    <string name="selected_billet">SELECTED BILLET</string>
 
     <string-array name="cryptos">
         <item>BTC</item>

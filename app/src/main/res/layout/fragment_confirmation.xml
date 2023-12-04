@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:text="Check-In Date:"
+        android:text="@string/check_in_date2"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
         android:id="@+id/checkoutView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check-Out Date:"
+        android:text="@string/check_out_date2"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
         android:id="@+id/pricepdView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Price (Per Night):"
+        android:text="@string/price_per_night2"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +55,7 @@
         android:id="@+id/paymentMethodView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Payment Method:"
+        android:text="@string/payment_method"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +69,7 @@
         android:id="@+id/numGuests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of Guests:"
+        android:text="@string/number_of_guests"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +87,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.042" />
@@ -146,13 +146,13 @@
 
     <TextView
         android:id="@+id/numGuestsView"
-        android:layout_width="133dp"
-        android:layout_height="26dp"
+        android:layout_width="40dp"
+        android:layout_height="27dp"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.614"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.274" />
@@ -161,7 +161,7 @@
         android:id="@+id/bookingId2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Booking ID:"
+        android:text="@string/booking_id"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -172,23 +172,10 @@
         app:layout_constraintVertical_bias="0.329" />
 
     <TextView
-        android:id="@+id/thankyouMessage"
-        android:layout_width="301dp"
-        android:layout_height="159dp"
-        android:textColor="#0C0C0C"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
-
-    <TextView
         android:id="@+id/selectedBillet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SELECTED BILLET"
+        android:text="@string/selected_billet"
         android:textColor="#FF5722"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -196,7 +183,8 @@
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintVertical_bias="0.391"
+        tools:ignore="VisualLintOverlap" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -207,6 +195,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.637"
+        android:contentDescription="@string/todo2" />
+
+    <CheckBox
+        android:id="@+id/confirmationBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="#FF5722"
+        android:text="@string/i_agree_to_the_terms_and_services_of_billetblaze"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/reservationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/place_reservation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

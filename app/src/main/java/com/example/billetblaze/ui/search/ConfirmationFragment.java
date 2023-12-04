@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.billetblaze.R;
@@ -16,7 +15,7 @@ import java.security.SecureRandom;
 
 public class ConfirmationFragment extends Fragment {
 
-    private TextView checkinTv, checkoutTv, priceCView, paymentMView, bookingIdValue, numGuestsView, thankyouMessageView;
+    private TextView checkinTv, checkoutTv, priceCView, paymentMView, bookingIdValue, numGuestsView;
     private static final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYQ";
     private static final String numbers = "0123456789";
     private static final int len = 3;
@@ -31,25 +30,15 @@ public class ConfirmationFragment extends Fragment {
         paymentMView = view.findViewById(R.id.paymentMView);
         bookingIdValue = view.findViewById(R.id.bookingIdValue);
         numGuestsView = view.findViewById(R.id.numGuestsView);
-        thankyouMessageView = view.findViewById(R.id.thankyouMessage);
         bookingIdValue.setText(bookingId);
 
 
         BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
-        String guestNameValue = bsd.getGuestName().getValue();
-        String paymentValue = bsd.getPaymentUsed().getValue();
-        String price = "temp";
         bsd.getStartDate().observe(getViewLifecycleOwner(), startDate -> checkinTv.setText(startDate));
         bsd.getEndDate().observe(getViewLifecycleOwner(), endDate -> checkoutTv.setText(endDate));
         bsd.getPriceString().observe(getViewLifecycleOwner(), priceString -> priceCView.setText(priceString));
         bsd.getPaymentUsed().observe(getViewLifecycleOwner(), paymentUsed -> paymentMView.setText(paymentUsed));
         bsd.getNumGuests().observe(getViewLifecycleOwner(), numGuests -> numGuestsView.setText(numGuests));
-
-        String message = "Dear " + guestNameValue + ",\n\n" +
-                "Your payment of " + price + " via " + paymentValue + " was successful.\n\n";
-
-
-        thankyouMessageView.setText(message);
 
         return view;
     }
