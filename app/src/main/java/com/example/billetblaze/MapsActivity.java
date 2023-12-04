@@ -1,9 +1,7 @@
 package com.example.billetblaze;
-
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +14,6 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,7 +21,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.example.billetblaze.databinding.ActivityMapsBinding;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;

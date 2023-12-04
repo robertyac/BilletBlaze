@@ -8,54 +8,50 @@
 
     <TextView
         android:id="@+id/ppnView"
-        android:layout_width="143dp"
-        android:layout_height="42dp"
+        android:layout_width="141dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="12dp"
         android:text="@string/price_per_night"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"
+        app:layout_constraintTop_toBottomOf="@+id/billetImage"
         tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/priceView"
-        android:layout_width="51dp"
+        android:layout_width="63dp"
         android:layout_height="32dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/roundprice"
         android:paddingTop="3dp"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toEndOf="@+id/ppnView"
+        app:layout_constraintTop_toBottomOf="@+id/billetImage" />
 
     <TextView
         android:id="@+id/billeDescriptionTV"
-        android:layout_width="312dp"
-        android:layout_height="192dp"
+        android:layout_width="380dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="8dp"
         android:text="@string/billet_description"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.395"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintTop_toBottomOf="@+id/ppnView" />
 
     <TextView
         android:id="@+id/billetTittleTv"
         android:layout_width="330dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="@string/billet_tittle"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -68,25 +64,24 @@
 
     <Button
         android:id="@+id/bookButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="313dp"
+        android:layout_height="43dp"
         android:text="@string/book_now"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/billeDescriptionTV"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.864" />
+        app:layout_constraintStart_toStartOf="@+id/billeDescriptionTV"
+        app:layout_constraintTop_toBottomOf="@+id/billeDescriptionTV"
+        app:layout_constraintVertical_bias="0.085" />
 
     <ImageView
         android:id="@+id/billetImage"
         android:layout_width="406dp"
-        android:layout_height="228dp"
+        android:layout_height="141dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/house"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toBottomOf="@+id/billetTittleTv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
