@@ -28,7 +28,7 @@
     <string name="gender">Gender:</string>
     <string name="cryptoAddress">Address</string>
     <string name="_1234_5678_9012_3456">1234 5678 9012 3456</string>
-    <string name="mm_yy">MM/YY</string>
+    <string name="mm_yy">MM/YYYY</string>
     <string name="name_holder">Name Holder</string>
     <string name="nameInput">Name</string>
     <string name="coin">Coin</string>

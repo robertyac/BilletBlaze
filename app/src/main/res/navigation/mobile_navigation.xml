@@ -124,7 +124,16 @@
         android:id="@+id/confirmationFragment"
         android:name="com.example.billetblaze.ui.search.ConfirmationFragment"
         android:label="Confirmation Summary"
-        tools:layout="@layout/fragment_confirmation" />
+        tools:layout="@layout/fragment_confirmation" >
+        <action
+            android:id="@+id/action_confirmationFragment_to_reservedFragment"
+            app:destination="@id/reservedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservedFragment"
+        android:name="com.example.billetblaze.ui.search.reservedFragment"
+        android:label="fragment_reserved"
+        tools:layout="@layout/fragment_reserved" />
 
 
 </navigation>
