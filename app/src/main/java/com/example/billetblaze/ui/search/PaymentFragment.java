@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -30,12 +31,11 @@ public class PaymentFragment extends Fragment {
 
     private static final int PAYPAL_REQUEST_CODE = 123;
     private static final String TAG = "PaymentFragment";
-
+    private Spinner spin;
     private PayPalConfiguration config;
     private TextInputEditText cardNameInput, cardInput, cryptoInput, dateInput, cvvInput;
     private Button confirmButton;
     private RadioButton creditRadio, cryptoRadio;
-    private Spinner cryptoSpinner;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_payment, container, false);
@@ -58,7 +58,7 @@ public class PaymentFragment extends Fragment {
         Button payPalButton = view.findViewById(R.id.payPalButton);
         payPalButton.setOnClickListener(v -> makePayPalPayment());
 
-        Spinner spin = view.findViewById(R.id.cryptoSpinner);
+        spin = view.findViewById(R.id.cryptoSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 requireContext(),
                 R.array.cryptos,
@@ -66,6 +66,7 @@ public class PaymentFragment extends Fragment {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
+
 
         // SECTION: Credit Card Selected
         creditRadio.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -132,21 +133,46 @@ public class PaymentFragment extends Fragment {
         });
 
         confirmButton.setOnClickListener(v -> {
+            boolean error = false;
+
             if (creditRadio.isChecked()) {
-                if (Objects.requireNonNull(cvvInput.getText()).length() == 3 && isValidDate(Objects.requireNonNull(dateInput.getText()).toString()) &&
-                        Objects.requireNonNull(cardInput.getText()).toString().replaceAll("\\s", "").length() == 16 &&
-                        !Objects.requireNonNull(cardNameInput.getText()).toString().trim().isEmpty()) {
-                       Navigation.findNavController(v).navigate(R.id.action_paymentFragment_to_confirmationFragment);
+                if (Objects.requireNonNull(cvvInput.getText()).length() != 3) {
+                    cvvInput.setError("CVV must be 3 digits");
+                    error = true;
+                }
+
+                String cardNumber = Objects.requireNonNull(cardInput.getText()).toString().replaceAll("\\s", "");
+                if (cardNumber.length() != 16) {
+                    cardInput.setError(getString(R.string.card_number_must_be_16_digits));
+                    Toast.makeText(requireContext(), "Enter the credit card number in the format NNNN NNNN NNNN NNNN", Toast.LENGTH_SHORT).show();
+                    error = true;
+                }
+
+                String date = Objects.requireNonNull(dateInput.getText()).toString();
+                if (!isValidDate(date)) {
+                    dateInput.setError("Invalid date format (MM/YYYY)");
+                    Toast.makeText(requireContext(), "Enter the date in the format MM/YYYY", Toast.LENGTH_SHORT).show();
+                    error = true;
+                }
+
+                String cardName = Objects.requireNonNull(cardNameInput.getText()).toString();
+                if (cardName.trim().isEmpty()) {
+                    cardNameInput.setError("Card name cannot be empty");
+                    error = true;
                 }
             } else if (cryptoRadio.isChecked()) {
-                if (spin.getSelectedItem() != null) {
-                    String selectedCrypto = spin.getSelectedItem().toString();
-                    String cryptoAddress = Objects.requireNonNull(cryptoInput.getText()).toString();
-                    if ((selectedCrypto.equals("ETH") && isValidEthAddress(cryptoAddress)) ||
-                            (selectedCrypto.equals("BTC") && isValidBtcAddress(cryptoAddress))) {
-                        Navigation.findNavController(v).navigate(R.id.action_paymentFragment_to_confirmationFragment);
-                    }
+                String selectedCrypto = spin.getSelectedItem().toString();
+                String cryptoAddress = Objects.requireNonNull(cryptoInput.getText()).toString();
+
+                if ((selectedCrypto.equals("ETH") && !isValidEthAddress(cryptoAddress)) ||
+                        (selectedCrypto.equals("BTC") && !isValidBtcAddress(cryptoAddress))) {
+                    cryptoInput.setError("Invalid crypto address");
+                    error = true;
                 }
+            }
+
+            if (!error) {
+                Navigation.findNavController(v).navigate(R.id.action_paymentFragment_to_confirmationFragment);
             }
         });
 
@@ -154,7 +180,7 @@ public class PaymentFragment extends Fragment {
     }
 
     private void validateCryptoInput() {
-        String selectedCrypto = cryptoSpinner.getSelectedItem().toString();
+        String selectedCrypto = spin.getSelectedItem().toString();
         String cryptoAddress = Objects.requireNonNull(cryptoInput.getText()).toString();
 
         if (selectedCrypto.equals("ETH") && !isValidEthAddress(cryptoAddress)) {
@@ -189,7 +215,7 @@ public class PaymentFragment extends Fragment {
         }
     }
 
-        // Checking the date
+    // Checking the date
     private boolean isValidDate(String date) {
         return date.matches("\\d{2}/\\d{4}");
     }
@@ -202,10 +228,12 @@ public class PaymentFragment extends Fragment {
     // Checking valid BTC address
     private boolean isValidBtcAddress(String address) {
         return address.length() == 34;
-}
+    }
+
     @Override
     public void onDestroy() {
         getActivity().stopService(new Intent(getActivity(), PayPalService.class));
         super.onDestroy();
     }
+
 }

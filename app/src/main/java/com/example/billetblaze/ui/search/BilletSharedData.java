@@ -14,6 +14,7 @@ public class BilletSharedData extends AndroidViewModel {
     private final MutableLiveData<String> paymentUsed = new MutableLiveData<>();
     private final MutableLiveData<String> numGuests = new MutableLiveData<>();
 
+    private final MutableLiveData<String> takenBID = new MutableLiveData<>();
     private final MutableLiveData<String> guestName = new MutableLiveData<>();
 
     // Class for storing the live data that the user selects for date values. This way the user
@@ -54,5 +55,8 @@ public class BilletSharedData extends AndroidViewModel {
 
     public void setGuestName(String guestName){this.guestName.setValue(guestName);}
 
+    public MutableLiveData<String> getTakenBID() {return takenBID;}
+
+    public void setTakenBID(String takenBID){this.takenBID.setValue(takenBID);}
 }
 

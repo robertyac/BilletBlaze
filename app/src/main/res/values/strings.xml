@@ -61,6 +61,9 @@
     <string name="price_per_night2">Price (Per Night):</string>
     <string name="place_reservation">PLACE RESERVATION</string>
     <string name="selected_billet">SELECTED BILLET</string>
+    <string name="home">HOME</string>
+    <string name="manage_bookings">MANAGE BOOKINGS</string>
+    <string name="final_price">Final Price:</string>
 
     <string-array name="cryptos">
         <item>BTC</item>
