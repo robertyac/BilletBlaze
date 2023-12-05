@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="8dp"
+    android:id="@+id/contact_container">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/contactImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/baseline_person_24" />
+
+        <TextView
+            android:id="@+id/billetNameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:paddingStart="8dp"
+            android:text="Billet Name A"
+            android:textSize="30dp"/>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

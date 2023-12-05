@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,12 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.example.billetblaze.Billet;
 import com.example.billetblaze.R;
 import com.example.billetblaze.databinding.FragmentHomeBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.List;
 
 public class HomeFragment extends Fragment {
 

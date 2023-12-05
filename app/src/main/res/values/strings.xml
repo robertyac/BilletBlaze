@@ -70,7 +70,7 @@
     <string-array name="bookings_spinner">
         <item>active</item>
         <item>inactive</item>
-        <item>bookings</item>
+        <item>reviews</item>
     </string-array>
 
 </resources>

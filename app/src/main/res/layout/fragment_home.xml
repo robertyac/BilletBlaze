@@ -74,6 +74,7 @@
         android:id="@+id/hostButton"
         android:layout_width="170dp"
         android:layout_height="100dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_button"
@@ -90,14 +91,15 @@
         android:id="@+id/commsButton"
         android:layout_width="170dp"
         android:layout_height="100dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_people_alt_24"
         android:text="Communication Hub"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/manageButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mapsButton"
         app:layout_constraintTop_toBottomOf="@+id/userLocationTv" />
 
@@ -105,14 +107,14 @@
         android:id="@+id/mapsButton"
         android:layout_width="170dp"
         android:layout_height="100dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/round_button"
         android:drawableTop="@drawable/baseline_map_24"
         android:text="Local Wildfire Map"
         android:textAllCaps="false"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/manageButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nearbyUpdates" />
 
     <TextView
@@ -123,21 +125,21 @@
         android:text="Nearby Updates"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/userLocationTv"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/manageButton"
         app:layout_constraintTop_toBottomOf="@+id/manageButton" />
 
     <TextView
         android:id="@+id/userLocationTv"
-        android:layout_width="152dp"
+        android:layout_width="105dp"
         android:layout_height="29dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="4dp"
         android:drawableLeft="@drawable/baseline_person_pin_circle_24"
         android:text="Kelowna"
         android:textAlignment="viewStart"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/manageButton"
         app:layout_constraintTop_toBottomOf="@+id/manageButton" />
 
     <TextView
