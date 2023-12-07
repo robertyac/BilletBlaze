@@ -1,7 +1,7 @@
 # BilletBlaze - Wildfire Billeting App
 COSC 341 Group 11 project
 
-![](images/apphome.png)
+<img src="images/apphome.png" alt="app homescreen" width="200"/>
 
 **NOTE** :
 In order to run this github repo in android studio just create a file named **local.properties** under Gradle Scripts with location of your Android SDK 
