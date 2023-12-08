@@ -41,6 +41,8 @@ public class ConfirmationFragment extends Fragment {
         bookingIdValue.setText(bookingId);
 
 
+        // Getting the live data from the BSD class
+
         BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
         bsd.getStartDate().observe(getViewLifecycleOwner(), startDate -> checkinTv.setText(startDate));
         bsd.getEndDate().observe(getViewLifecycleOwner(), endDate -> checkoutTv.setText(endDate));

@@ -53,7 +53,7 @@ public class PaymentFragment extends Fragment {
         // Setup for PayPal API
         config = new PayPalConfiguration()
                 .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
-                .clientId("API KEY HERE");
+                .clientId("AUer8EUljB9yzFXqFcwjO2Ghll3U6yQsQUtmIMdtpgs_EqhYY7ZgWPEXDLFzDv-nWFnKKPU-YcH4Wv61");
 
         Button payPalButton = view.findViewById(R.id.payPalButton);
         payPalButton.setOnClickListener(v -> makePayPalPayment());
@@ -179,6 +179,7 @@ public class PaymentFragment extends Fragment {
         return view;
     }
 
+    // Checking for a valid address ETH/BTC
     private void validateCryptoInput() {
         String selectedCrypto = spin.getSelectedItem().toString();
         String cryptoAddress = Objects.requireNonNull(cryptoInput.getText()).toString();

@@ -43,6 +43,9 @@ public class ReservedFragment extends Fragment {
         homeButton = view.findViewById(R.id.homeButton);
         manageBookings = view.findViewById(R.id.manageBookings);
 
+
+        // Getting live values...
+
         BilletSharedData bsd = new ViewModelProvider(requireActivity()).get(BilletSharedData.class);
         bsd.getStartDate().observe(getViewLifecycleOwner(), startDate -> checkinTv.setText(startDate));
         bsd.getEndDate().observe(getViewLifecycleOwner(), endDate -> checkoutTv.setText(endDate));
@@ -54,6 +57,8 @@ public class ReservedFragment extends Fragment {
         String checkInStr = bsd.getStartDate().getValue();
         String checkOutStr = bsd.getEndDate().getValue();
         String ppN = bsd.getPriceString().getValue();
+
+        // Getting the TOTAL PRICE based on the users stay-length
 
         String overallPriceStr = null;
         try {
