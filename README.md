@@ -4,6 +4,9 @@ COSC 341 Group 11 project
 <img src="images/apphome.png" alt="app homescreen" width="200"/>
 
 ## Overview of System Features
+
+Detailed in ([BilletBlaze documentation.pdf](https://github.com/robertyac/BilletBlaze/blob/master/BilletBlaze%20documentation.pdf))
+
 Searching for available billets ([Robert](https://github.com/robertyac)):
 This task is where we allow the user to search for a billet based on their desired specifications such as location, date and number of guests. A scrollable cardview result set has all of the available billeting options.
 
@@ -28,3 +31,5 @@ sdk.dir=/Users/YOURUSERNAME/Library/Android/sdk
 
 MAPS_API_KEY=AI.... (this is your maps API key) The placeholder is the manifest (don't need to change that)
 You will also need to set the run configurations to the defaults in the button next to the virtual device button 
+
+### LoFi Balsamiq prototype found here: [billetblaze - Balsamiq FINAL .pdf](https://github.com/robertyac/BilletBlaze/blob/master/billetblaze%20-%20Balsamiq%20FINAL%20.pdf) download for interactive, clickable pdf
